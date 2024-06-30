@@ -80,9 +80,9 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-secondary pl-1 gap-0 text-2xl">
+        <NavLink to='/' className="btn btn-ghost text-secondary pl-1 gap-0 text-2xl md:text-4xl">
           Tech<span className="text-primary">Blaze</span>
-        </a>
+        </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
