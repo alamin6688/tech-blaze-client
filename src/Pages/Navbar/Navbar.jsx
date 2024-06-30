@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -26,20 +27,19 @@ const Navbar = () => {
         </a>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
-          <li className="font-bold text-primary">
-            <a>Home</a>
-          </li>
-          <li className="font-bold">
-            <a>Blogs</a>
-          </li>
-          <li className="font-bold">
-            <a>Bookmarks</a>
-          </li>
+        <ul className="menu gap-4 menu-horizontal px-1">
+          <Link to='/' className="font-bold text-primary">
+            Home
+          </Link>
+          <Link to='/blogs' className="font-bold">
+            Blogs
+          </Link>
+          <Link to='/bookmarks' className="font-bold">
+            Bookmarks
+          </Link>
           <label className="grid cursor-pointer place-items-center">
             <input onChange={handleToggle}
               type="checkbox"
-            //   value="synthwave"
               className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
             />
             <svg
