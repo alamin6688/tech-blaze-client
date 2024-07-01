@@ -16,6 +16,7 @@ const Bookmarks = () => {
     setBlogs(storedBlogs);
   }
 
+  
   return (
     <div className="max-w-screen-xl mx-auto min-h-[calc(100vh-284px)] grid px-4 pt-10 pb-16 justify-center grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {blogs.map((blog) => (
