@@ -1,3 +1,4 @@
+import './BlogDetails';
 import { useLoaderData } from "react-router-dom";
 import placeHolderImage from "../../assets/404.jpg";
 import Markdown from "react-markdown";
@@ -15,7 +16,7 @@ const Content = () => {
       >
         <img
           role="presentation"
-          className="object-cover w-full rounded  bg-gray-500 dark:bg-gray-500"
+          className="object-cover w-full rounded bg-gray-500 dark:bg-gray-500"
           src={cover_image || placeHolderImage}
         />
         <div className="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-400 dark:border-gray-600">
@@ -37,9 +38,9 @@ const Content = () => {
           <span className="text-xs text-gray-400 dark:text-gray-600">
             {new Date(published_at).toLocaleDateString()}
           </span>
-          <p className="space-y-3 pb-4">
+          <div className="prose dark:prose-dark max-w-none">
             <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
-          </p>
+          </div>
         </div>
       </div>
     </div>

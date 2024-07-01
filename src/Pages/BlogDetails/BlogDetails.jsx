@@ -17,7 +17,7 @@ const BlogDetails = () => {
     <div className="max-w-screen-xl mx-auto px-2 mt-6 md:mt-12 mb-16 space-y-12">
       <article className="space-y-8 bg-gray-800 dark:bg-gray-100 text-gray-50 dark:text-gray-900">
         <div className="space-y-6 px-4">
-          <h1 className="text-4xl pt-8 font-bold md:tracking-tight md:text-5xl">
+          <h1 className="text-2xl pt-8 font-bold md:tracking-tight md:text-4xl">
             {title}
           </h1>
           <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-400 dark:text-gray-600">
