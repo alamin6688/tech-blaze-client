@@ -4,7 +4,7 @@ import Reviews from "../../Reviews/Reviews";
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-h-[calc(100vh-284px)]">
       <div className="flex relative flex-col items-center justify-center">
         <Banner></Banner>
 

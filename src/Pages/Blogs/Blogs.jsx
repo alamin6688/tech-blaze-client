@@ -1,19 +1,23 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import { useState } from "react";
 import BlogCard from "./BlogCard";
+import Loader from "../../Components/Loader";
 
 const Blogs = () => {
   const blogs = useLoaderData();
-  const [visibleBlogs, setVisibleBlogs] = useState(9); 
+  const [visibleBlogs, setVisibleBlogs] = useState(9);
+  const navigation = useNavigation();
 
   const handleLoadMore = () => {
     // Load 9 more blogs each time
     setVisibleBlogs(prevVisibleBlogs => prevVisibleBlogs + 9); 
   };
 
+  if(  navigation.state === 'loading') return <Loader/>
+
   return (
     <div>
-      <section className="bg-base-200 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
+      <section className="bg-base-200 dark:bg-gray-100 text-gray-100 dark:text-gray-800 min-h-[calc(100vh-284px)]">
         <div className="container max-w-screen-xl mx-auto p-6 space-y-6 sm:space-y-12">
           <a
             rel="noopener noreferrer"
