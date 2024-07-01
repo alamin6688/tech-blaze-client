@@ -5,7 +5,7 @@ import Loader from "../../Components/Loader";
 
 const Blogs = () => {
   const blogs = useLoaderData();
-  const [visibleBlogs, setVisibleBlogs] = useState(9);
+  const [visibleBlogs, setVisibleBlogs] = useState(10);
   const navigation = useNavigation();
 
   const handleLoadMore = () => {
@@ -40,7 +40,7 @@ const Blogs = () => {
             </div>
           </a>
           <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {blogs.slice(0, visibleBlogs).map(blog => (
+            {blogs.slice(1, visibleBlogs).map(blog => (
               <BlogCard key={blog.id} blog={blog} />
             ))}
           </div>

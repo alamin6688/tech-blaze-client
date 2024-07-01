@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { BiSolidBookmarkAltPlus } from "react-icons/bi";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { saveBlog } from "../../Utilities";
 
 const BlogDetails = () => {
   const [tabindex, setTabindex] = useState(0);
@@ -13,6 +15,9 @@ const BlogDetails = () => {
     published_at,
   } = blogDetails;
 
+  const handleBookmark = (blogDetails)=>{
+    saveBlog(blogDetails)
+  }
 
   return (
     <div className="max-w-screen-xl mx-auto px-2 mt-6 md:mt-12 mb-16 space-y-12 min-h-[calc(100vh-284px)]">
@@ -85,6 +90,11 @@ const BlogDetails = () => {
             </svg>
             <span>Author</span>
           </Link>
+          {/* Bookmark Button Stat*/}
+          <div onClick={()=>handleBookmark(blogDetails)} className="bg-primary p-3 ml-6 rounded-full hover:bg-opacity-30 bg-opacity-20 cursor-pointer hover:scale-105 overflow-hidden">
+            <BiSolidBookmarkAltPlus size={20} className="text-secondary"/>
+          </div>
+          {/* Bookmark Button End*/}
         </div>
         {/* Tab End */}
         <Outlet></Outlet>
