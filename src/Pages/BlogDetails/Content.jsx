@@ -1,9 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import placeHolderImage from "../../assets/404.jpg";
+import Markdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 const Content = () => {
   const blogs = useLoaderData();
-  const { cover_image, title, published_at, description, tags } = blogs;
+  const { cover_image, title, published_at, body_html, tags } = blogs;
 
   return (
     <div className="max-w-screen-xl mx-auto border-2 p-4 group hover:no-underline focus:no-underline">
@@ -35,7 +37,9 @@ const Content = () => {
           <span className="text-xs text-gray-400 dark:text-gray-600">
             {new Date(published_at).toLocaleDateString()}
           </span>
-          <p>{description}</p>
+          <p className="space-y-3 pb-4">
+            <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
+          </p>
         </div>
       </div>
     </div>
