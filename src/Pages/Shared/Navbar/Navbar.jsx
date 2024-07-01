@@ -43,7 +43,7 @@ const Navbar = () => {
 
   const handleToggle = (e) => {
     if (e.target.checked) {
-      setTheme("synthwave");
+      setTheme("dark");
     } else {
       setTheme("light");
     }
@@ -80,7 +80,10 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <NavLink to='/' className="btn btn-ghost text-secondary pl-1 gap-0 text-2xl md:text-4xl">
+        <NavLink
+          to="/"
+          className="btn btn-ghost text-secondary pl-1 gap-0 text-2xl md:text-4xl"
+        >
           Tech<span className="text-primary">Blaze</span>
         </NavLink>
       </div>
