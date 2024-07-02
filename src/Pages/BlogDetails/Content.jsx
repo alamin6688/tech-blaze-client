@@ -6,7 +6,7 @@ import rehypeRaw from "rehype-raw";
 
 const Content = () => {
   const blogs = useLoaderData();
-  const { cover_image, title, published_at, body_html, tags } = blogs;
+  const { cover_image, title, published_at, body_html, tags, url } = blogs;
 
   return (
     <div className="max-w-screen-xl mx-auto border-2 p-4 group hover:no-underline focus:no-underline">
@@ -31,10 +31,12 @@ const Content = () => {
             </a>
           ))}
         </div>
-        <div className="pt-2 space-y-2">
-          <h3 className="text-2xl font-semibold group-focus:underline">
+        <div className="pt-2 space-y-2 flex flex-col">
+          <a href={url}
+          target='_blank'
+          className="text-2xl font-semibold hover:underline group-focus:underline">
             {title}
-          </h3>
+          </a>
           <span className="text-xs text-gray-400 dark:text-gray-600">
             {new Date(published_at).toLocaleDateString()}
           </span>

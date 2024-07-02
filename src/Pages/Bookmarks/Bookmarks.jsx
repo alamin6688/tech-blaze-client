@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { deleteBlog, getBlogs } from "../../Utilities";
 import BlogCard from "../Blogs/BlogCard";
+import EmptyState from "../../Components/EmptyState";
 
 const Bookmarks = () => {
 
@@ -14,6 +15,15 @@ const Bookmarks = () => {
     deleteBlog(id);
     const storedBlogs = getBlogs();
     setBlogs(storedBlogs);
+  }
+
+  if(blogs.length < 1){
+    return <EmptyState 
+    message={'No Bookmarks added!'}
+    address={'/blogs'}
+    label={'Browse Blogs'}
+    />
+
   }
 
   
